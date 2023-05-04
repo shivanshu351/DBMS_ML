@@ -71,7 +71,7 @@ x_train=x_train.reshape(x_train.shape[0],x_train.shape[1],1)
 x_test=x_test.reshape(x_test.shape[0],x_test.shape[1],1)
 
 #loading the model
-model=load_model('final_f/final_model_2.h5')
+model=load_model('final_model_2.h5')
 train_predict=model.predict(x_train)
 test_predict=model.predict(x_test)
 
