@@ -1,13 +1,9 @@
-import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import datetime as dt
 import yfinance as yf
 import streamlit as st
 import json
 import requests
-from keras.models import load_model
-from sklearn.model_selection import StratifiedShuffleSplit
 from streamlit_lottie import st_lottie  # pip install streamlit-lottie
 header_section=st.container()
 def load_lottiefile(filepath: str):

@@ -12,6 +12,7 @@ from streamlit_lottie import st_lottie  # pip install streamlit-lottie
 from keras.models import load_model
 from sklearn.model_selection import StratifiedShuffleSplit
 from streamlit_lottie import st_lottie  # pip install streamlit-lottie
+title_section=st.container()
 header_section=st.container()
 def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
@@ -21,11 +22,16 @@ def load_lottieurl(url: str):
     if r.status_code != 200:
         return None
     return r.json()
+with title_section:
+    st.title("Stockify")
+    lottie_column_1,lottie_column_2=st.columns([1,1])
+    st.write("This model was trained using stock data collected over the course of past 20 years and using web scraping user can enter the symbol for any listed stock to analyse and predict the future closing prices")
 lottie_stock=load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_LmW6VioIWc.json")
 with header_section:
     lottie_column,title_column=st.columns([1,2])
     with title_column:
         st.title("DataBase Analysis using Machine Learning")
+        st.write('We aim to assist the user in betting against the odds while dealing with the volatile stock market')
     with lottie_column:
         st_lottie(lottie_stock)
 start = dt.datetime(2010, 1, 1)
